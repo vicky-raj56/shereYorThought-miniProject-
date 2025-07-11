@@ -1,0 +1,50 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="w-full h-screen bg-zinc-700 text-white">
+    <h1 class="text-xl mb-2">Register Account</h1>
+    <form action="/register" method="post">
+      <div>
+        <input
+          class="outline-none border-2 border-zinc-500 px-2 py-1"
+          type="text"
+          placeholder="name"
+          name="name"
+        />
+        <input
+          class="outline-none border-2 border-zinc-500 px-2 py-1"
+          type="text"
+          placeholder="username"
+          name="username"
+        />
+        <input
+          class="outline-none border-2 border-zinc-500 px-2 py-1"
+          type="email"
+          placeholder="email"
+          name="email"
+        />
+        <input
+          class="outline-none border-2 border-zinc-500 px-2 py-1"
+          type="password"
+          placeholder="password"
+          name="password"
+        />
+        <input
+          class="outline-none border-2 border-zinc-500 px-2 py-1"
+          type="number"
+          placeholder="age"
+          name="age"
+        />
+        <input
+          class="bg-blue-500 px-2 py-2 text-xl rounded-[10px] cursor-pointer"
+          type="submit"
+          value="Creat Account"
+        />
+      </div>
+    </form>
+  </body>
+</html>
