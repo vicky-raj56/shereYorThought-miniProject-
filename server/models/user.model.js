@@ -28,6 +28,10 @@ const userSchema = new mongoose.Schema({
       ref: "post",
     },
   ],
+  profilepic:{
+    type:String,
+    default:"default.webp"
+  },
   date: {
     type: Date,
     default: Date.now(),

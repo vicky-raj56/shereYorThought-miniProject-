@@ -13,9 +13,16 @@
         >Logout</a
       >
     </div>
-    <h1 class="text-xl mb-2">
-      <span class="text-light">Hello,</span> <%= user.name %> 👋
-    </h1>
+    <a class="text-blue-400 mb-4 inline-block" href="/profile/upload"> click here for upload your pic</a>
+    <div class="profilepic flex items-center gap-2 mb-3">
+      <div class="w-15 h-15 rounded-md">
+        <img class="w-full h-full object-cover" src="/uploads/<%= user.profilepic || 'default.webp' %>" alt="error" />
+        <!-- <img class="bg-red-500" src="../uploads/default.webp" alt="" /> -->
+      </div>
+      <h1 class="text-xl mb-2">
+        <span class="text-light">Hello,</span> <%= user.name %> 👋
+      </h1>
+    </div>
     <h5 class="mb-5">You can create a new post.</h5>
     <form action="/profile" method="post">
       <textarea
@@ -43,7 +50,7 @@
           <small class="mt-2"> <%= post.likes.length %> Likes</small>
           <div class="btns flex mt-4 gap-2">
             <a class="text-blue-500" href="/likes/<%= post._id %>">
-                <%= post.likes.indexOf(user._id)=== -1 ? "Like" : "Unlike"  %>
+              <%= post.likes.indexOf(user._id)=== -1 ? "Like" : "Unlike" %>
             </a>
             <a class="text-zinc-400" href="/edit/<%=post._id %>">edit</a>
           </div>

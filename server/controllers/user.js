@@ -85,6 +85,7 @@ const getProfileController = async (req, res) => {
     .findOne({ email: req.user.email })
     .populate("posts");
   // console.log(user)
+  // console.log(user);
 
   // console.log(user.posts)
   res.render("profile", { user });
@@ -126,10 +127,27 @@ const getEditProfilePostController = async (req, res) => {
 
 const editProfilePostController = async (req, res) => {
   // const postId = req.params.id;
-  const post = await postModel.findOneAndUpdate({ _id: req.params.id },{content:req.body.content},{new:true});
-  res.redirect("/profile")
-  
-  
+  const post = await postModel.findOneAndUpdate(
+    { _id: req.params.id },
+    { content: req.body.content },
+    { new: true }
+  );
+  res.redirect("/profile");
+};
+
+// profilepic show
+const getProfilePicController =  (req, res) => {
+  res.render("profilepic");
+};
+const profilePicController = async (req, res) => {
+  // console.log(req.file)
+  const user = await userModel.findOne({email:req.user.email});
+  if(!user){
+    return res.send("user not found ")
+  };
+  user.profilepic = req.file.filename;
+  await user.save();
+  res.redirect("profile")
 };
 
 export {
@@ -143,4 +161,6 @@ export {
   profileLikesController,
   getEditProfilePostController,
   editProfilePostController,
+  getProfilePicController,
+  profilePicController,
 };

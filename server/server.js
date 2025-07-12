@@ -3,6 +3,7 @@ const app = express();
 import userRourter from "./routes/user.js";
 import connectDB from "./config/db.js";
 import cookieParser from "cookie-parser";
+// import path from "path"
 
 connectDB();
 
@@ -10,6 +11,7 @@ app.set("view engine", "ejs");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use('/uploads', express.static('uploads'));
 
 app.use("", userRourter);
 
