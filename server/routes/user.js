@@ -1,6 +1,7 @@
 import express from "express";
 import {
   editProfilePostController,
+  getAllPostSeeController,
   getEditProfilePostController,
   getLoginController,
   getProfileController,
@@ -31,5 +32,7 @@ router.get("/edit/:id", isLogedIn, getEditProfilePostController);
 router.post("/update/:id", isLogedIn, editProfilePostController);
 router.get("/profile/upload/", isLogedIn, getProfilePicController);
 router.post("/upload", isLogedIn, upload.single("image"),profilePicController);
+router.get("/user-post", isLogedIn, getAllPostSeeController);
+
 
 export default router;

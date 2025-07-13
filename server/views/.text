@@ -1,0 +1,11 @@
+//    <% user.posts.reverse().forEach(function(post){ %>
+
+//  <h1 class="text-blue-500 mb-2">@<%=user.username %></h1>
+        //   <p class="text-sm tracking-tight"><%= post.content %></p>
+        //   <small class="mt-2"> <%= post.likes.length %> Likes</small>
+        //   <div class="btns flex mt-4 gap-2">
+        //     <a class="text-blue-500" href="/likes/<%= post._id %>">
+        //       <%= post.likes.indexOf(user._id)=== -1 ? "Like" : "Unlike" %>
+        //     </a>
+        //     <a class="text-zinc-400" href="/edit/<%=post._id %>">edit</a>
+        //   </div> 
